@@ -1,0 +1,16 @@
+{
+  "name": "tkupa",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-ignore": "^1.2.1",
+    "gulp-stylus": "^2.0.4",
+    "gulp-util": "^3.0.5",
+    "nib": "^1.1.0"
+  }
+}
