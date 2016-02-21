@@ -1,0 +1,65 @@
+@import "../node_modules/normalize.css/normalize.css"
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+button
+input[type="reset"]
+input[type="button"]
+input[type="submit"]
+  &::-moz-focus-inner
+    padding: 0
+    margin: 0
+    border: 0
+
+input, button, select
+  margin: 0
+  padding: 0
+  border: 0
+
+body
+  background: color-background
+  font-size: font-size
+  font-family: font-sans
+  color: color-default
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  position: relative
+
+$wrapper
+  clearfix()
+  padding: 0 gutter-width
+
+$inner
+  clearfix()
+  max-width: max-width
+  margin: 0 auto
+
+#wrapper
+  @extend $wrapper
+
+#container
+  @extend $inner
+  padding-top: top-nav-height + banner-height
+
+#container-body
+  padding-left: nav-width + gutter-width
+
+#main-content
+  clearfix()
+  margin-right: sidebar-width
+
+#main-col
+  @extend $wrapper
+  width: 100%
+  float: left
+
+#sidebar
+  @extend $wrapper
+  width: sidebar-width
+  float: right
+  margin-right: sidebar-width * -1
