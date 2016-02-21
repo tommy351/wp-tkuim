@@ -5,31 +5,33 @@
 .footer__contact
   clearfix()
   padding: 0 gutter-width
-  font-size: 1.35em
   color: #eee
+  line-height: line-height
+  @media mq-desktop
+    font-size: 1.35em
 
 .footer__contact-link
-  float: left
-  padding-right: 25px
-  &:last-of-type
-    padding-right: 0
+  @media mq-desktop
+    padding-right: 25px
+    float: left
 
 .footer__copyright
   clearfix()
   padding: 1em gutter-width 0
   font-size: 0.9em
   color: #bbb
+  line-height: line-height
   .menu
     list-style: none
     margin: 0
     padding: 0
-    float: left
   li
-    float: left
-    &:before
-      content: " / "
-      opacity: 0.6
-      padding: 0 0.5em
+    @media mq-desktop
+      float: left
+      &:before
+        content: " / "
+        opacity: 0.6
+        padding: 0 0.5em
   a
     color: inherit
     text-decoration: none
@@ -37,7 +39,8 @@
       color: color-accent
 
 .footer__copyright-text
-  float: left
+  @media mq-desktop
+    float: left
 
 .footer__admin-link
   float: right

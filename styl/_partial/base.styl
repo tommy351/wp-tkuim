@@ -32,11 +32,13 @@ body
 .base__container
   clearfix()
   position: relative
-  margin-left: header-menu-width
+  @media mq-desktop
+    margin-left: header-menu-width
 
 .base__main
   background: #fff
-  width: 100%
-  float: right
-  box-shadow: 0 0 16px rgba(#000, 0.3)
-  border-radius: 3px 0 0 3px
+  @media mq-desktop
+    width: 100%
+    float: right
+    box-shadow: 0 0 16px rgba(#000, 0.3)
+    border-radius: 3px 0 0 3px
