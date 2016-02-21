@@ -636,6 +636,11 @@ body {
   cursor: pointer;
   line-height: 1;
 }
+@media screen and (min-width: 769px) {
+  .header__menu-toggle {
+    display: none;
+  }
+}
 .header__menu-toggle i {
   vertical-align: middle;
   display: inline-block;
@@ -650,6 +655,11 @@ body {
   position: absolute;
   top: -9999px;
   left: -9999px;
+}
+@media screen and (min-width: 769px) {
+  #header__menu-checkbox {
+    display: none;
+  }
 }
 #header__menu-checkbox:checked ~ .header__nav {
   display: block;
@@ -675,7 +685,7 @@ body {
 @media screen and (min-width: 769px) {
   .index__container {
     max-width: 1200px;
-    margin-right: 300px;
+    margin-right: 250px;
   }
 }
 .index__content {
@@ -776,8 +786,8 @@ body {
 @media screen and (min-width: 769px) {
   .sidebar {
     float: right;
-    width: 300px;
-    margin-right: -300px;
+    width: 250px;
+    margin-right: -250px;
   }
 }
 .sidebar__widget {

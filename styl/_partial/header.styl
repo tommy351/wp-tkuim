@@ -98,6 +98,8 @@
   height: 65px
   cursor: pointer
   line-height: 1
+  @media mq-desktop
+    display: none
   i
     vertical-align: middle
     display: inline-block
@@ -111,6 +113,8 @@
   position: absolute
   top: -9999px
   left: -9999px
+  @media mq-desktop
+    display: none
   &:checked
     ~ .header__nav
       display: block
