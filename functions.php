@@ -32,7 +32,8 @@ function tkuim_setup(){
 
   register_nav_menus(array(
     'primary' => __('Primary menu', 'tkuim'),
-    'top'     => __('Top menu', 'tkuim')
+    'top'     => __('Top menu', 'tkuim'),
+    'footer'  => __('Footer menu', 'tkuim')
   ));
 }
 
@@ -43,9 +44,9 @@ function tkuim_widgets_init(){
 		'name'          => __('Sidebar', 'tkuim'),
 		'id'            => 'sidebar-1',
 		'description'   => __('Add widgets here to appear in your sidebar.', 'tkuim'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="sidebar__widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="sidebar__widget-title">',
 		'after_title'   => '</h2>',
 	));
 }
@@ -53,7 +54,7 @@ function tkuim_widgets_init(){
 add_action('widgets_init', 'tkuim_widgets_init');
 
 function tkuim_scripts(){
-  wp_enqueue_style('tkuim-fontawesome', get_template_directory_uri() . '/node_modules/font-awesome/css/font-awesome.min.css', array(), '4.5.0');
+  wp_enqueue_style('tkuim-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0');
   wp_enqueue_style('tkuim-style', get_stylesheet_uri(), array(), '1.0.0');
 
   wp_enqueue_script('tkuim-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3');
@@ -61,3 +62,15 @@ function tkuim_scripts(){
 }
 
 add_action('wp_enqueue_scripts', 'tkuim_scripts');
+
+function tkuim_custom_header_setup(){
+  add_theme_support('custom-header', apply_filters('tkuim_custom_header_args', array(
+    'default-text-color' => 'fff',
+    'width' => 1000,
+    'height' => 250,
+    'flex-height' => true,
+    'header-text' => false
+  )));
+}
+
+add_action('after_setup_theme', 'tkuim_custom_header_setup');

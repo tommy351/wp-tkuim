@@ -1,31 +1,36 @@
 <?php get_header() ?>
-<main id="main-col">
-  <div id="page-content">
-    <?php if (have_posts()) : ?>
-    <h2 class="section-title">最新消息</h2>
-    <ul id="news-list">
+
+<?php if (get_header_image()) : ?>
+<header class="index__banner">
+  <img class="index__banner-img" src="<?= get_header_image() ?>" width="<?= get_custom_header()->width ?>" height="<?= get_custom_header()->height ?>">
+</header>
+<?php endif; ?>
+
+<div class="index__container">
+  <div class="index__content">
+    <section class="index__section">
+      <h1 class="index__section-title">最新消息</h1>
       <?php while (have_posts()) : the_post(); ?>
-      <li id="post-<?php the_ID(); ?>" class="news-list-item" <?php post_class(); ?>>
-        <a href="<?php the_permalink() ?>" class="news-list-link">
-          <div class="news-list-item-date">
-            <span class="news-list-item-date-month"><?= get_the_date('M') ?></span>
-            <span class="news-list-item-date-date"><?= get_the_date('j') ?></span>
+        <a id="index__news-<?= get_the_ID() ?>" href="<?php the_permalink() ?>" <?php post_class('index__news-entry') ?>>
+          <strong class="index__news-title"><?php the_title() ?></strong>
+          <div class="index__news-excerpt"><?= get_the_excerpt() ?></div>
+          <div class="index__news-meta">
+            <time class="index__news-date" datetime="<?= esc_attr(get_the_date('c')); ?>">
+              <i class="fa fa-calendar"></i> <?= esc_html(get_the_date()) ?>
+            </time>
+            <?php if(function_exists('the_views')) : ?>
+              <span class="index__news-views"><i class="fa fa-bar-chart"></i> <?php the_views() ?></span>
+            <?php endif; ?>
           </div>
-          <div class="news-list-item-content">
-            <strong class="news-list-item-title"><?php the_title(); ?></strong>
-            <span class="news-list-item-excerpt"><?php the_excerpt(); ?></span>
-          </div>
-          <div class="news-list-item-meta">123 人次</div>
         </a>
-      </li>
-			<?php endwhile;
-			the_posts_pagination( array(
-				'prev_text'          => __('Previous page', 'tkuim'),
-				'next_text'          => __('Next page', 'tkuim')
-			));	?>
-    </ul>
-    <?php endif; ?>
+      <?php endwhile; ?>
+      <nav class="index__pagination">
+        <?= paginate_links() ?>
+      </nav>
+    </section>
   </div>
-</main>
-<?php get_sidebar(); ?>
+
+  <?php get_sidebar() ?>
+</div>
+
 <?php get_footer() ?>

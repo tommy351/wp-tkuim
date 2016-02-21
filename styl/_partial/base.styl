@@ -28,38 +28,15 @@ body
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+.base__container
+  clearfix()
   position: relative
+  margin-left: header-menu-width
 
-$wrapper
-  clearfix()
-  padding: 0 gutter-width
-
-$inner
-  clearfix()
-  max-width: max-width
-  margin: 0 auto
-
-#wrapper
-  @extend $wrapper
-
-#container
-  @extend $inner
-  padding-top: top-nav-height + banner-height
-
-#container-body
-  padding-left: nav-width + gutter-width
-
-#main-content
-  clearfix()
-  margin-right: sidebar-width
-
-#main-col
-  @extend $wrapper
+.base__main
+  background: #fff
   width: 100%
-  float: left
-
-#sidebar
-  @extend $wrapper
-  width: sidebar-width
   float: right
-  margin-right: sidebar-width * -1
+  box-shadow: 0 0 16px rgba(#000, 0.3)
+  border-radius: 3px 0 0 3px

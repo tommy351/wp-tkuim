@@ -1,34 +1,67 @@
-#header
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-
-#top-nav-wrap
-  @extend $wrapper
-  background: color-top-nav
-  height: top-nav-height
-
-#top-nav
-  @extend $inner
-
-#top-nav-right
-  float: right
-
-.top-nav-item
+.header__menu
   float: left
+  width: header-menu-width
+  margin-left: header-menu-width * -1
 
-.top-nav-link
-  color: #eee
-  font-size: 0.9em
-  text-decoration: none
-  padding: 0 15px
-  transition: 0.2s
-  line-height: top-nav-height
+.header__logo-wrap
+  padding: 35px 0
+  margin: 0
+  font-size: 1em
+  font-weight: normal
+
+.header__logo
   display: block
-  &:hover
-    background: lighten(color-top-nav, 10%)
+  background: url(images/logo.png) no-repeat center top
+  background-size: logo-size
+  text-align: center
+  padding-top: logo-size + 20px
+  color: #fff
+  text-decoration: none
+  line-height: 1
 
-#banner
-  height: banner-height
-  background: black
+.header__nav
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+  li
+    position: relative
+    &:hover
+      background: lighten(color-background, 20%)
+      > .sub-menu
+        display: block
+  a
+    text-decoration: none
+    color: #fff
+    display: block
+    padding: 16px 24px
+    line-height: 1
+    font-size: 1.15em
+  .sub-menu
+    display: none
+    position: absolute
+    left: 100%
+    top: 0
+    background: color-background
+    white-space: nowrap
+    box-shadow: 0 0 12px rgba(#000, 0.3)
+
+.header__top-menu
+  clearfix()
+  background: color-background
+  font-size: 0.9em
+  line-height: 1
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    float: right
+  li
+    float: left
+  a
+    color: #ddd
+    text-decoration: none
+    padding: 10px 15px
+    display: block
+    &:hover
+      color: color-accent

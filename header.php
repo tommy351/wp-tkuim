@@ -8,33 +8,29 @@
   <?php wp_head() ?>
 </head>
 <body <?php body_class() ?>>
-<header id="header">
-  <nav id="top-nav-wrap">
-    <div id="top-nav">
-      <ul id="top-nav-right">
-        <?php
-        if (has_nav_menu('top')){
-          wp_nav_menu(array(
-            'theme_location' => 'top',
-            'items_wrap' => '%3$s',
-            'container' => ''
-          ));
-        }
-        ?>
-      </ul>
-    </div>
-  </nav>
-  <div id="banner"></div>
-</header>
-<div id="wrapper">
-<div id="container">
-
-<nav id="main-nav">
-  <h1 id="logo-wrap">
-    <a href="<?= esc_url(home_url('/')) ?>" rel="home" id="logo"><?php bloginfo('name') ?></a>
-  </h1>
-  <?php wp_nav_menu(array('theme_location' => 'primary')) ?>
+<nav class="header__top-menu">
+  <ul>
+    <?php if (has_nav_menu('top')) : ?>
+      <?php wp_nav_menu(array(
+        'theme_location' => 'top',
+        'items_wrap' => '%3$s',
+        'container' => '',
+        'depth' => 1
+      )) ?>
+    <?php endif; ?>
+    <?php pll_the_languages(array(
+      'show_flags' => true,
+      'hide_current' => true
+    )) ?>
+  </ul>
 </nav>
-
-<div id="container-body">
-<div id="main-content">
+<div class="base__container">
+<div class="header__menu">
+  <h1 class="header__logo-wrap">
+    <a href="<?= esc_url(home_url('/')) ?>" class="header__logo"><?php bloginfo('name') ?></a>
+  </h1>
+  <nav class="header__nav">
+    <?php wp_nav_menu(array('theme_location' => 'primary')) ?>
+  </nav>
+</div>
+<main class="base__main">

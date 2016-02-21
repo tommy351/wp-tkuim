@@ -1,76 +1,80 @@
-#page-content
-  padding: 30px 0
+.index__banner-img
+  display: block
+  width: 100%
+  height: auto
 
-.section-title
-  font-weight: bold
-  color: color-top-nav
-  margin-bottom: 1em
-
-#news-list
-  list-style: none
-  margin: 0
-  padding: 0
-
-.news-list-item
-  border-top: 1px solid color-border
-  padding: 15px 0
-
-.news-list-link
+.index__container
   clearfix()
+  max-width: max-width
+  margin-right: sidebar-width
+
+.index__content
+  float: left
+  width: 100%
+  padding: 0 gutter-width
+
+.index__section
+  padding: 40px 0 20px
+
+.index__section-title
+  margin: 0
+  font-weight: 300
+  padding-bottom: 10px
+
+.index__news-entry
   display: block
   text-decoration: none
-  position: relative
+  color: inherit
+  padding: 12px 0
+  border-top: 1px solid color-border
+  &:hover
+    background: #eee
 
-.news-list-item-date
-  position: absolute
-  top: 0
-  left: 0
-  bottom: 0
-  margin: auto
-  text-align: center
-  width: 60px
-
-.news-list-item-date-month
-  color: color-gray
-  font-weight: bold
+.index__news-title
   display: block
-  font-size: 0.9em
-  padding-bottom: 4px
-
-.news-list-item-date-date
-  color: color-default
-  font-size: 1.2em
-  display: block
-
-.news-list-item-content
-  margin-left: 60px
-  padding-left: 15px
-  border-left: 1px solid color-border
-
-.news-list-item-title
   font-size: 1.1em
-  font-weight: bold
-  color: color-default
-  line-height: 1.2
-  display: block
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
+  .index__news-entry:hover &
+    color: color-accent
 
-.news-list-item-excerpt
-  color: color-gray
-  display: block
+.index__news-excerpt
+  font-size: 0.9em
+  padding: 0.5em 0
   line-height: line-height
-  font-size: 0.9em
-  padding-top: 0.5em
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
 
-.news-list-item-meta
-  position: absolute
-  top: 0
-  right: 0
-  text-align: right
-  font-size: 0.9em
+.index__news-meta
+  clearfix()
   color: color-gray
+  font-size: 0.9em
+
+$index__news-meta-item
+  float: left
+  padding-right: 15px
+  &:last-child
+    padding-right: 0
+
+.index__news-date
+  @extend $index__news-meta-item
+
+.index__news-views
+  @extend $index__news-meta-item
+
+.index__pagination
+  clearfix()
+  padding-top: 20px
+  .page-numbers
+    text-decoration: none
+    color: inherit
+    display: block
+    float: left
+    line-height: 1
+    padding: 6px 12px
+    border: 1px solid color-border
+    margin-right: 10px
+    border-radius: 3px
+    &:hover
+      background: #0e83cd
+      color: #fff
+  span.page-numbers
+    font-weight: bold
+    background: #0e83cd
+    color: #fff
