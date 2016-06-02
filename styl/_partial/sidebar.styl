@@ -25,3 +25,23 @@
   padding-bottom: 10px
   line-height: 1.1
   border-bottom: 1px solid color-border
+
+.searchform
+  position: relative
+  display: flex
+
+.searchform__input
+  border: 2px solid color-border
+  padding: 5px 10px
+  width: 100%
+  outline: none
+  appearance: none
+  border-right: none
+  &:focus
+    border-color: color-accent
+
+.searchform__button
+  background: color-accent
+  padding: 0 10px
+  color: #fff
+  white-space: nowrap

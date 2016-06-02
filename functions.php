@@ -74,3 +74,20 @@ function tkuim_custom_header_setup(){
 }
 
 add_action('after_setup_theme', 'tkuim_custom_header_setup');
+
+function tkuim_per_get_posts($query){
+  if (is_admin() || !$query->is_main_query()) return;
+
+  if (is_post_type_archive('teachers')){
+    $query->set('posts_per_page', -1);
+    $query->set('orderby', 'menu_order');
+    $query->set('order', 'ASC');
+  }
+}
+
+add_action('pre_get_posts', 'tkuim_per_get_posts', 1);
+
+function tkuim_get_post_thumbnail(){
+  $thumbs = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium_large');
+  return $thumbs[0];
+}
