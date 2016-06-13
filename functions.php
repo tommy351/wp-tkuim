@@ -78,7 +78,7 @@ add_action('after_setup_theme', 'tkuim_custom_header_setup');
 function tkuim_per_get_posts($query){
   if (is_admin() || !$query->is_main_query()) return;
 
-  if (is_post_type_archive('teachers')){
+  if (is_post_type_archive('teacher')){
     $query->set('posts_per_page', -1);
     $query->set('orderby', 'menu_order');
     $query->set('order', 'ASC');

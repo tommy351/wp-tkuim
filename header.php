@@ -39,3 +39,9 @@
   </nav>
 </div>
 <main class="base__main">
+
+<?php if (get_header_image()) : ?>
+<header class="index__banner">
+  <img class="index__banner-img" src="<?= get_header_image() ?>" width="<?= get_custom_header()->width ?>" height="<?= get_custom_header()->height ?>">
+</header>
+<?php endif; ?>
