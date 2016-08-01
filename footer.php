@@ -12,12 +12,13 @@
     </div>
   </div>
   <div class="footer__copyright">
-    網頁維護：顏秀鳳、邱瑜瑩
+    網頁維護：詹雅涵、邱瑜瑩<br>
+    個資保護聯絡窗口：詹雅涵
   </div>
   <div class="footer__copyright">
     <span class="footer__copyright-text">&copy; <?php bloginfo('name') ?></span>
-    <?php wp_nav_menu(array('
-      theme_location' => 'footer',
+    <?php wp_nav_menu(array(
+      'theme_location' => 'footer',
       'depth' => 1,
       'container' => ''
     )) ?>

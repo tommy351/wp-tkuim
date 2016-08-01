@@ -13,8 +13,4 @@
     <?php the_content('Continue reading') ?>
     <?php wp_link_pages() ?>
   </main>
-
-  <footer class="content__footer">
-    <i class="fa fa-calendar"></i> <?= esc_html(get_the_date()) ?>
-  </footer>
 </article>
