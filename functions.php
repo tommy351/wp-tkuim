@@ -1,6 +1,6 @@
 <?php
 function tkuim_setup(){
-  // load_theme_textdomain('tkuim', get_template_directory() . '/languages');
+  load_theme_textdomain('tkuim', get_template_directory() . '/languages');
 
   add_theme_support('automatic-feed-links');
 

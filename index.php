@@ -3,7 +3,7 @@
 <div class="index__container">
   <div class="index__content">
     <section class="index__section">
-      <h1 class="index__section-title">最新消息</h1>
+      <h1 class="index__section-title"><?= __('News', 'tkuim') ?></h1>
       <?php while (have_posts()) : the_post(); ?>
         <a id="index__news-<?= get_the_ID() ?>" href="<?php the_permalink() ?>" <?php post_class('index__news-entry') ?>>
           <strong class="index__news-title"><?php the_title() ?></strong>

@@ -13,10 +13,10 @@
         </header>
         <main class="content__body">
           <p>
-            <div>電子信箱：<?= types_render_field('teacher_email') ?></div>
-            <div>研究室：<?= types_render_field('lab_address') ?></div>
-            <div>個人網站：<?= types_render_field('personal_site') ?></div>
-            <div>教師歷程系統：<?= types_render_field('history_site') ?></div>
+            <div><?= sprintf(__('Email: %s', 'tkuim'), types_render_field('teacher_email')) ?></div>
+            <div><?= sprintf(__('Lab: %s', 'tkuim'), types_render_field('lab_address')) ?></div>
+            <div><?= sprintf(__('Website: %s', 'tkuim'), types_render_field('personal_site')) ?></div>
+            <div><?= sprintf(__('History: %s', 'tkuim'), types_render_field('history_site')) ?></div>
           </p>
           <?php the_content('Continue reading') ?>
           <?php wp_link_pages() ?>
