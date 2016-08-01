@@ -12,8 +12,8 @@
     </div>
   </div>
   <div class="footer__copyright">
-    <?= sprintf(__('Maintenance: %s', 'tkuim'), '詹雅涵、邱瑜瑩') ?><br>
-    <?= sprintf(__('個資保護聯絡窗口: %s'), '詹雅涵') ?>
+    <?= __('Maintenance: Chan, Ya-Han, Chiu, Yu-Ying', 'tkuim') ?><br>
+    <?= __('Privacy office: Chan, Ya-Han', 'tkuim') ?>
   </div>
   <div class="footer__copyright">
     <span class="footer__copyright-text">&copy; <?php bloginfo('name') ?></span>
