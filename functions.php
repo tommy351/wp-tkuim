@@ -79,7 +79,7 @@ function tkuim_per_get_posts($query){
   if (is_admin() || !$query->is_main_query()) return;
 
   if (is_post_type_archive('teacher') || is_tax('teacher-type')){
-    $query->set('posts_per_page', -1);
+    $query->set('nopaging', true);
     $query->set('orderby', 'menu_order');
     $query->set('order', 'ASC');
   }
